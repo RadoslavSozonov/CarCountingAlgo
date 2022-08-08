@@ -28,13 +28,8 @@ import argparse
 import os
 import sys
 from pathlib import Path
-from datetime import datetime
 import torch
-import torch.backends.cudnn as cudnn
 import matplotlib
-matplotlib.use('QtAgg')
-import matplotlib.pyplot as plt
-from collections import OrderedDict
 
 FILE = Path(__file__).resolve()
 ROOT = FILE.parents[0]  # YOLOv5 root directory
@@ -44,10 +39,8 @@ ROOT = Path(os.path.relpath(ROOT, Path.cwd()))  # relative
 from flask import Flask, request
 from PIL import Image
 from models.common import DetectMultiBackend
-from utils.dataloaders import IMG_FORMATS, VID_FORMATS, LoadImages, LoadStreams
-from utils.general import (LOGGER, check_file, check_img_size, check_imshow, check_requirements, colorstr, cv2,
-                           increment_path, non_max_suppression, print_args, scale_coords, strip_optimizer, xyxy2xywh)
-from utils.plots import Annotator, colors, save_one_box
+from utils.dataloaders import LoadImages
+from utils.general import (check_img_size, check_requirements, non_max_suppression, print_args, scale_coords)
 from utils.torch_utils import select_device, time_sync
 
 app = Flask(__name__)
