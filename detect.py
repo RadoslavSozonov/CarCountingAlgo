@@ -44,7 +44,7 @@ from utils.general import (check_img_size, check_requirements, non_max_suppressi
 from utils.torch_utils import select_device, time_sync
 
 app = Flask(__name__)
-DETECTION_URL = "/cars-counting/yolov5s"
+DETECTION_URL = "/cars-counting"
 @torch.no_grad()
 def run(
         weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
@@ -167,6 +167,10 @@ def main(opt):
     check_requirements(exclude=('tensorboard', 'thop'))
     return run(**vars(opt))
 
+@app.route('/')
+def index():
+    return 'Hello World!'
+
 @app.route(DETECTION_URL, methods=["POST"])
 def predict():
     if request.method != "POST":
@@ -186,14 +190,15 @@ def predict():
         opt = parse_opt()
         cars = main(opt)
         # print(cars)
-        return cars
+        # return cars
+        return "Done"
         # return "None"
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Flask API exposing YOLOv5 model")
-    parser.add_argument("--port", default=5000, type=int, help="port number")
+    parser.add_argument("--port", default=5002, type=int, help="port number")
     opt = parser.parse_args()
-    app.run(host="0.0.0.0", port=opt.port)
+    app.run(host="0.0.0.0", port=5002)
     # opt = parse_opt()
     # cars = main(opt)
     # new_carlist = sorted(cars, key=lambda x: x["number"])

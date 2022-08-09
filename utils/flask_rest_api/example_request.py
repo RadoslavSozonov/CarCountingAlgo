@@ -7,8 +7,8 @@ import pprint
 
 import requests
 
-DETECTION_URL = "http://localhost:5000/cars-counting/yolov5s"
-IMAGE = "2.jpg"
+DETECTION_URL = "http://localhost:5000/start"
+IMAGE = "3.jpg"
 
 # Read image
 with open(IMAGE, "rb") as f:
