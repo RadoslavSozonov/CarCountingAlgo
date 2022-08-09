@@ -105,7 +105,7 @@ results.print()  # or .show(), .save(), .crop(), .pandas(), etc.
 `detect.py` 在各种数据源上运行推理, 其会从最新的 YOLOv5 [版本](https://github.com/ultralytics/yolov5/releases) 中自动下载 [模型](https://github.com/ultralytics/yolov5/tree/master/models) 并将检测结果保存到 `runs/detect` 目录。
 
 ```bash
-python detect.py --source 0  # 网络摄像头
+python app.py --source 0  # 网络摄像头
                           img.jpg  # 图像
                           vid.mp4  # 视频
                           path/  # 文件夹

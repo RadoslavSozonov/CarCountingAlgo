@@ -96,7 +96,7 @@ def set_logging(name=None, verbose=VERBOSE):
 
 
 set_logging()  # run before defining LOGGER
-LOGGER = logging.getLogger("yolov5")  # define globally (used in train.py, val.py, detect.py, etc.)
+LOGGER = logging.getLogger("yolov5")  # define globally (used in train.py, val.py, app.py, etc.)
 for fn in LOGGER.info, LOGGER.warning:
     _fn, fn = fn, lambda x: _fn(emojis(x))  # emoji safe logging
 

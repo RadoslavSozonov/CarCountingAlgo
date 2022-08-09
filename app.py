@@ -3,7 +3,7 @@
 Run inference on images, videos, directories, streams, etc.
 
 Usage - sources:
-    $ python path/to/detect.py --weights yolov5s.pt --source 0              # webcam
+    $ python path/to/appapp.py --weights yolov5s.pt --source 0              # webcam
                                                              img.jpg        # image
                                                              vid.mp4        # video
                                                              path/          # directory
@@ -12,7 +12,7 @@ Usage - sources:
                                                              'rtsp://example.com/media.mp4'  # RTSP, RTMP, HTTP stream
 
 Usage - formats:
-    $ python path/to/detect.py --weights yolov5s.pt                 # PyTorch
+    $ python path/to/appapp.py --weights yolov5s.pt                 # PyTorch
                                          yolov5s.torchscript        # TorchScript
                                          yolov5s.onnx               # ONNX Runtime or OpenCV DNN with --dnn
                                          yolov5s.xml                # OpenVINO
