@@ -195,7 +195,7 @@ def predict():
         # return "None"
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=False, host='0.0.0.0')
     # parser = argparse.ArgumentParser(description="Flask API exposing YOLOv5 model")
     # parser.add_argument("--port", default=5002, type=int, help="port number")
     # opt = parser.parse_args()
