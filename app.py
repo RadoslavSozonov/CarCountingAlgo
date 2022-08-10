@@ -189,13 +189,13 @@ def predict():
         im.save("data/image/img1.jpeg")
         opt = parse_opt()
         cars = main(opt)
-        # print(cars)
-        # return cars
-        return "Done"
+        print(cars)
+        return cars
+        # return "Done"
         # return "None"
 
 if __name__ == "__main__":
-    app.run(debug=False, host='0.0.0.0',port=5000)
+    app.run(debug=False, host='0.0.0.0', port=5000)
     # parser = argparse.ArgumentParser(description="Flask API exposing YOLOv5 model")
     # parser.add_argument("--port", default=5002, type=int, help="port number")
     # opt = parser.parse_args()
