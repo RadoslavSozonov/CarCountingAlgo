@@ -132,7 +132,7 @@ def run(
 def parse_opt():
     parser = argparse.ArgumentParser()
     parser.add_argument('--weights', nargs='+', type=str, default=ROOT / 'best_yolov5l_weights_23_7_12_30.pt', help='model path(s)')
-    parser.add_argument('--source', type=str, default=ROOT / 'data/image', help='file/dir/URL/glob, 0 for webcam')
+    parser.add_argument('--source', type=str, default=ROOT / '', help='file/dir/URL/glob, 0 for webcam')
     parser.add_argument('--data', type=str, default=ROOT / 'data/custom_data.yaml', help='(optional) dataset.yaml path')
     parser.add_argument('--imgsz', '--img', '--img-size', nargs='+', type=int, default=[1280], help='inference size h,w')
     parser.add_argument('--conf-thres', type=float, default=0.25, help='confidence threshold')
@@ -186,11 +186,11 @@ def predict():
         im_bytes = im_file.read()
         im = Image.open(io.BytesIO(im_bytes))
         # print(im)
-        im.save("data/image/img1.jpeg")
+        im.save("img1.jpeg")
         opt = parse_opt()
         cars = main(opt)
         print(cars)
-        return cars
+        return str(cars[0]["cars"])
         # return "Done"
         # return "None"
 
