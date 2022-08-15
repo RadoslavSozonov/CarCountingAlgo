@@ -190,7 +190,9 @@ def predict():
         opt = parse_opt()
         cars = main(opt)
         print(cars)
-        return str(cars[0]["cars"])
+        if len(cars) > 0 and "cars" in cars[0]:
+            return str(cars[0]["cars"])
+        return str(0)
         # return "Done"
         # return "None"
 
